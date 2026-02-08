@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h4 id="heading">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ea omnis molestiae reprehenderit? Perferendis
+        culpa minus corrupti unde, aut blanditiis impedit necessitatibus perspiciatis? Sed ducimus consectetur ut amet
+        facere iure.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore ea omnis molestiae reprehenderit? Perferendis
+        culpa minus corrupti unde, aut blanditiis impedit necessitatibus perspiciatis? Sed ducimus consectetur ut amet
+        facere iure.
+    </h4>
+
+    <script>
+        let heading = document.getElementById('heading')
+        let headingText = document.getElementById('heading').innerText
+        let slicedHeading
+
+        if (headingText.length > 120) {
+            slicedHeading = headingText.slice(0, 120)
+        }
+
+        function readMore() {
+            heading.innerHTML = `${headingText} <button onclick="readLess()" >Read Less</button>`
+        }
+
+        function readLess() {
+            heading.innerHTML = `${slicedHeading}... <button onclick="readMore()" >Read More</button>`
+        }
+
+        readLess()
+
+    </script>
+</body>
+
+</html>
